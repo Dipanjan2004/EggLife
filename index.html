@@ -28,7 +28,7 @@
                 </div>
             </div>
         </nav>
-        <section class="view1">
+        <section class="view1 animate-on-scroll">
             <div class="top">
                 <h2>The Perfect Wrap® for eating better</h2>
                 <div class="txt">
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </section>
-        <section class="view2">
+        <section class="view2 animate-on-scroll">
             <div class="top">
                 <h2>Simple. <span>Delicious.</span>Nutrition.</h2>
                 <p>A versatile, protein-powered way to reimagine your favorite meals.</p>
@@ -122,7 +122,7 @@
                 </div>
             </div>
         </section>
-        <section class="view3">
+        <section class="view3 animate-on-scroll">
             <div class="top">
                 <img src="/imgs/i10.webp" alt="">
             </div>
@@ -146,7 +146,7 @@
                 <p>per serving</p>
             </div>
         </section>
-        <section class="view4">
+        <section class="view4 animate-on-scroll">
             <div class="top">
                 <h2>The perfect protein</h2>
             </div>
@@ -171,5 +171,19 @@
             </div>
         </footer>
     </main>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+      });
+    </script>
 </body>
 </html>
