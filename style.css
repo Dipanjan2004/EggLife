@@ -709,3 +709,589 @@ main footer .bottom .right {
     justify-content: center;
   }
 }
+
+/* ===== Mobile drawer ===== */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 998;
+}
+.drawer-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 80%;
+  max-width: 22rem;
+  background-color: white;
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.08);
+}
+.drawer.is-open {
+  transform: translateX(0);
+}
+.drawer .drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.25rem;
+  border-bottom: 1px solid #EAE5FA;
+}
+.drawer .drawer-head img {
+  width: 7rem;
+}
+.drawer .drawer-head .drawer-close {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #521FCC;
+  cursor: pointer;
+}
+.drawer .drawer-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+.drawer .drawer-nav a {
+  text-decoration: none;
+  color: #521FCC;
+  font-family: f5;
+  font-size: 1.15rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f4f1fb;
+  transition: background-color 0.2s ease;
+}
+.drawer .drawer-nav a:hover {
+  background-color: #f7f4fd;
+}
+@media (min-width: 1081px) {
+  .drawer, .drawer-backdrop {
+    display: none;
+  }
+}
+
+/* ===== Product filters ===== */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+}
+.filters .filter-btn {
+  padding: 0.55rem 1.1rem;
+  background-color: white;
+  color: #521FCC;
+  border: 2px solid transparent;
+  border-radius: 2rem;
+  font-family: f4;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+}
+.filters .filter-btn:hover {
+  border-color: #521FCC;
+}
+.filters .filter-btn.is-active {
+  background-color: #521FCC;
+  color: white;
+}
+.card.is-hidden {
+  display: none !important;
+}
+.card {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== Modals ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal .modal-content {
+  background-color: white;
+  border-radius: 1.5rem;
+  max-width: 40rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 1.5rem;
+}
+.modal .modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #521FCC;
+  cursor: pointer;
+  z-index: 1;
+}
+.modal .modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.modal .modal-body .modal-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #EAE5FA;
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+.modal .modal-body .modal-img img {
+  width: 60%;
+  max-width: 14rem;
+}
+.modal .modal-body .modal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.modal .modal-body .modal-info h3 {
+  font-family: f3;
+  color: #521FCC;
+  font-size: 1.6rem;
+}
+.modal .modal-body .modal-info h4 {
+  font-family: f4;
+  color: #521FCC;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.modal .modal-body .modal-info p {
+  font-family: f1;
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.modal .modal-body .modal-macros {
+  display: flex;
+  gap: 0.75rem;
+}
+.modal .modal-body .modal-macros div {
+  flex: 1;
+  background-color: #EAE5FA;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+.modal .modal-body .modal-macros div strong {
+  font-family: f3;
+  color: #521FCC;
+  font-size: 1.3rem;
+}
+.modal .modal-body .modal-macros div span {
+  font-family: f4;
+  color: #521FCC;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+.modal .modal-body .modal-cta {
+  margin-top: 0.5rem;
+  padding: 0.9rem 1.6rem;
+  background-color: #E50192;
+  color: white;
+  font-family: f3;
+  border: none;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  align-self: flex-start;
+}
+.modal .modal-body.wtb h3 {
+  font-family: f3;
+  color: #521FCC;
+  font-size: 1.6rem;
+}
+.modal .modal-body.wtb > p {
+  font-family: f7;
+  color: #521FCC;
+  font-size: 0.95rem;
+}
+.modal .modal-body.wtb form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.modal .modal-body.wtb form input {
+  flex: 1;
+  min-width: 8rem;
+  padding: 0.8rem 1rem;
+  border: 2px solid #EAE5FA;
+  border-radius: 2rem;
+  font-family: f1;
+  font-size: 1rem;
+  color: #521FCC;
+  outline: none;
+}
+.modal .modal-body.wtb form input:focus {
+  border-color: #521FCC;
+}
+.modal .modal-body.wtb form button {
+  padding: 0.8rem 1.4rem;
+  background-color: #E50192;
+  color: white;
+  font-family: f3;
+  border: none;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.modal .modal-body.wtb .wtb-results {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.modal .modal-body.wtb .wtb-results li {
+  background-color: #f7f4fd;
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.modal .modal-body.wtb .wtb-results li strong {
+  font-family: f4;
+  color: #521FCC;
+  font-size: 0.95rem;
+}
+.modal .modal-body.wtb .wtb-results li span {
+  font-family: f1;
+  color: #555;
+  font-size: 0.85rem;
+}
+.modal .modal-body.wtb .wtb-results .wtb-error {
+  background-color: #fde8f1;
+  color: #b50171;
+  font-family: f4;
+  font-size: 0.9rem;
+}
+@media (min-width: 600px) {
+  .modal .modal-body {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .modal .modal-body .modal-img {
+    width: 45%;
+    align-items: center;
+  }
+  .modal .modal-body .modal-img img {
+    width: 80%;
+  }
+  .modal .modal-body .modal-info {
+    width: 55%;
+  }
+  .modal .modal-body.wtb {
+    flex-direction: column;
+  }
+}
+
+/* ===== Sticky CTA ===== */
+.sticky-cta {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%, 200%);
+  background-color: #E50192;
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.9rem 1.4rem;
+  font-family: f3;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  transition: transform 0.35s ease;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.sticky-cta.is-visible {
+  transform: translate(-50%, 0);
+}
+@media (min-width: 1081px) {
+  .sticky-cta {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    left: auto;
+    transform: translateX(200%);
+  }
+  .sticky-cta.is-visible {
+    transform: translateX(0);
+  }
+}
+
+/* ===== Back to top ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 50%;
+  background-color: #521FCC;
+  color: white;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 91;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 1080px) {
+  body:has(.sticky-cta.is-visible) .back-to-top {
+    bottom: 4.5rem;
+  }
+}
+
+/* ===== Recipes carousel ===== */
+.recipes {
+  background-color: #fffaf0;
+  padding: 4rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.recipes .recipes-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+  align-items: center;
+}
+.recipes .recipes-head h2 {
+  font-family: f3;
+  color: #521FCC;
+  font-size: 2rem;
+  line-height: 2.2rem;
+}
+.recipes .recipes-head p {
+  font-family: f7;
+  color: #521FCC;
+  font-size: 1rem;
+  max-width: 32rem;
+}
+.recipes .carousel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.recipes .carousel .carousel-btn {
+  background-color: white;
+  border: 2px solid #521FCC;
+  color: #521FCC;
+  height: 2.5rem;
+  width: 2.5rem;
+  min-width: 2.5rem;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.recipes .carousel .carousel-btn:hover {
+  background-color: #521FCC;
+  color: white;
+}
+.recipes .carousel .carousel-viewport {
+  flex: 1;
+  overflow: hidden;
+}
+.recipes .carousel .carousel-track {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.4s ease;
+}
+.recipes .carousel .carousel-track .recipe-card {
+  flex: 0 0 100%;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 12rem;
+  color: white;
+}
+.recipes .carousel .carousel-track .recipe-card .recipe-tag {
+  align-self: flex-start;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #521FCC;
+  font-family: f4;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 1rem;
+}
+.recipes .carousel .carousel-track .recipe-card h3 {
+  font-family: f3;
+  font-size: 1.3rem;
+  line-height: 1.4rem;
+}
+.recipes .carousel .carousel-track .recipe-card p {
+  font-family: f1;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+.recipes .carousel .carousel-track .recipe-card a {
+  margin-top: auto;
+  color: white;
+  text-decoration: none;
+  font-family: f4;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.recipes .carousel .carousel-track .recipe-card a:hover {
+  text-decoration: underline;
+}
+.recipes .carousel-dots {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+}
+.recipes .carousel-dots .carousel-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(82, 31, 204, 0.3);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.recipes .carousel-dots .carousel-dot.is-active {
+  background-color: #521FCC;
+  transform: scale(1.3);
+}
+@media (min-width: 600px) {
+  .recipes {
+    padding: 5rem 2rem;
+  }
+  .recipes .recipes-head h2 {
+    font-size: 2.5rem;
+    line-height: 2.6rem;
+  }
+  .recipes .carousel .carousel-track .recipe-card {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+}
+@media (min-width: 1081px) {
+  .recipes {
+    padding: 6rem 4rem;
+  }
+  .recipes .recipes-head h2 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+  .recipes .carousel .carousel-track .recipe-card {
+    flex: 0 0 calc(33.3333% - 0.6667rem);
+    min-height: 14rem;
+  }
+}
+
+/* ===== Newsletter ===== */
+footer .newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+footer .newsletter form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+footer .newsletter form input {
+  flex: 1;
+  min-width: 9rem;
+  padding: 0.7rem 1rem;
+  border: 2px solid #EAE5FA;
+  border-radius: 2rem;
+  font-family: f1;
+  font-size: 0.95rem;
+  color: #521FCC;
+  outline: none;
+  background-color: white;
+}
+footer .newsletter form input:focus {
+  border-color: #521FCC;
+}
+footer .newsletter form button {
+  padding: 0.7rem 1.2rem;
+  background-color: #E50192;
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  font-family: f3;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+footer .newsletter form .newsletter-msg {
+  width: 100%;
+  font-family: f1;
+  font-size: 0.85rem;
+  min-height: 1rem;
+}
+footer .newsletter form .newsletter-msg.is-error {
+  color: #b50171;
+}
+footer .newsletter form .newsletter-msg.is-success {
+  color: #1e7d3a;
+}
+@media (min-width: 1081px) {
+  footer .newsletter {
+    margin-top: 0;
+  }
+}
+
