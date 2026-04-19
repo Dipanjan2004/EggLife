@@ -1,0 +1,13 @@
+{
+  "name": "egg-life",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Egg Life Foods landing page",
+  "scripts": {
+    "build": "sass style.scss style.css --style=compressed --no-source-map",
+    "dev": "sass --watch style.scss:style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}
