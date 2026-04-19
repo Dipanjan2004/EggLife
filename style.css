@@ -584,6 +584,406 @@ main footer .footer-bottom .footer-legal a:hover {
   text-decoration: underline;
 }
 
+/* ===== Subpage layout ===== */
+.subpage-hero {
+  padding: 8rem 1.25rem 3.5rem;
+  background-color: #EAE5FA;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.subpage-hero .eyebrow {
+  font-family: f4;
+  color: #E50192;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.subpage-hero h1 {
+  font-family: f3;
+  color: #521FCC;
+  font-size: 2.2rem;
+  line-height: 2.3rem;
+}
+.subpage-hero p {
+  font-family: f7;
+  color: #521FCC;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 40rem;
+}
+.subpage-content {
+  max-width: 58rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.subpage-content h2 {
+  font-family: f3;
+  color: #521FCC;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+}
+.subpage-content h3 {
+  font-family: f3;
+  color: #521FCC;
+  font-size: 1.15rem;
+}
+.subpage-content p,
+.subpage-content li {
+  font-family: f1;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.subpage-content ul {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.subpage-content a {
+  color: #521FCC;
+  text-decoration: underline;
+}
+.subpage-content a:hover {
+  color: #E50192;
+}
+.subpage-content .lead {
+  font-family: f7;
+  color: #521FCC;
+  font-size: 1.15rem;
+  line-height: 1.55;
+}
+.subpage-content .callout {
+  background-color: #f7f4fd;
+  border-left: 4px solid #521FCC;
+  padding: 1.25rem 1.25rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Values / perks / pillars grid */
+.pillar-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.pillar {
+  background-color: #f7f4fd;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.pillar i {
+  font-size: 1.6rem;
+  color: #E50192;
+}
+.pillar h3 {
+  font-family: f3;
+  color: #521FCC;
+  font-size: 1.05rem;
+}
+.pillar p {
+  font-family: f1;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Blog grid */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+.blog-card {
+  background-color: white;
+  border: 1px solid #EAE5FA;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.blog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(82, 31, 204, 0.08);
+}
+.blog-card .meta {
+  font-family: f4;
+  color: #E50192;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.blog-card h3 {
+  font-family: f3;
+  color: #521FCC;
+  font-size: 1.2rem;
+  line-height: 1.35rem;
+}
+.blog-card p {
+  font-family: f1;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.blog-card a.read-more {
+  margin-top: auto;
+  font-family: f4;
+  color: #521FCC;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.blog-card a.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Careers jobs list */
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.job-card {
+  background-color: white;
+  border: 1px solid #EAE5FA;
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.job-card .job-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.job-card h3 {
+  font-family: f3;
+  color: #521FCC;
+  font-size: 1.1rem;
+}
+.job-card .job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.job-card .tag {
+  font-family: f4;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background-color: #EAE5FA;
+  color: #521FCC;
+  padding: 0.25rem 0.65rem;
+  border-radius: 1rem;
+}
+.job-card p {
+  font-family: f1;
+  color: #555;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.job-card a.apply {
+  align-self: flex-start;
+  font-family: f4;
+  color: #E50192;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.job-card a.apply:hover {
+  text-decoration: underline;
+}
+
+/* FAQ accordion */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.faq-list details {
+  background-color: white;
+  border: 1px solid #EAE5FA;
+  border-radius: 0.75rem;
+  padding: 0;
+  overflow: hidden;
+}
+.faq-list details summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1rem 1.25rem;
+  font-family: f3;
+  color: #521FCC;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.faq-list details summary::-webkit-details-marker {
+  display: none;
+}
+.faq-list details summary::after {
+  content: "\f1af";
+  font-family: "remixicon";
+  color: #521FCC;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+.faq-list details[open] summary::after {
+  transform: rotate(45deg);
+}
+.faq-list details .faq-body {
+  padding: 0 1.25rem 1.1rem;
+  font-family: f1;
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Press releases / media list */
+.press-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.press-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid #EAE5FA;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.press-item:last-child {
+  border-bottom: none;
+}
+.press-item .date {
+  font-family: f4;
+  color: #E50192;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.press-item h3 {
+  font-family: f3;
+  color: #521FCC;
+  font-size: 1.05rem;
+  line-height: 1.3rem;
+}
+.press-item a {
+  font-family: f4;
+  color: #521FCC;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.press-item a:hover {
+  text-decoration: underline;
+}
+
+/* Patents table-like list */
+.patent-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #EAE5FA;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.patent-list .patent-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #EAE5FA;
+  background-color: white;
+}
+.patent-list .patent-row:last-child {
+  border-bottom: none;
+}
+.patent-list .patent-row .pid {
+  font-family: f4;
+  color: #E50192;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+.patent-list .patent-row .title {
+  font-family: f1;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Responsive for subpages */
+@media (min-width: 600px) {
+  .subpage-hero {
+    padding: 9rem 2rem 4.5rem;
+  }
+  .subpage-hero h1 {
+    font-size: 3.2rem;
+    line-height: 3.3rem;
+  }
+  .subpage-hero p {
+    font-size: 1.1rem;
+  }
+  .subpage-content {
+    padding: 4rem 2rem 5rem;
+    gap: 2.5rem;
+  }
+  .subpage-content h2 {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
+  .pillar-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .blog-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .patent-list .patent-row {
+    grid-template-columns: 9rem 1fr;
+    align-items: center;
+  }
+}
+@media (min-width: 1081px) {
+  .subpage-hero {
+    padding: 10rem 4rem 5.5rem;
+  }
+  .subpage-hero h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+  .subpage-content {
+    padding: 5rem 4rem 6rem;
+  }
+  .pillar-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .blog-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 @media (max-width: 380px) {
   main section.view1 .top h2,
   main section.view2 .top h2,
